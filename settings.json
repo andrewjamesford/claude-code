@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "curl -d \"Claude needs your attention\" ntfy.sh/$NTFY_TOPIC"
+          }
+        ]
+      }
+    ]
+  },
+  "allowedTools": [
+    "Task",
+    "Bash", // ⚠️ Dangerous: allows all system commands at your own risk
+    "Glob",
+    "Grep",
+    "LS",
+    "Read",
+    "Edit",
+    "MultiEdit",
+    "Write",
+    "WebFetch",
+    "WebSearch"
+  ]
+}

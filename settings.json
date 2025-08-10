@@ -27,5 +27,9 @@
   ],
   "deny": [
     "Bash(rm)"
-  ]
+  ],
+  "statusLine": {
+    "type": "command",
+    "command": "printf '\\033[44m\\033[30m %s \\033[0m' \"$(basename \"$(pwd)\")\""
+  }
 }

@@ -386,7 +386,11 @@ The `settings.json` file contains Claude Code configuration for hooks and tool p
 
 ### Notification Hooks
 
-The configuration includes a notification hook that sends alerts via [ntfy.sh](https://ntfy.sh):
+Want to get notifications when Claude has finished or needs an answer?
+
+![NTFY notifcation](./ntfy-notification.png)
+
+This configuration includes a notification hook that sends alerts via [ntfy.sh](https://ntfy.sh):
 
 ```json
 {
@@ -407,9 +411,10 @@ The configuration includes a notification hook that sends alerts via [ntfy.sh](h
 ```
 
 **Setup:**
-1. Set the `NTFY_TOPIC` environment variable to your ntfy.sh topic
-2. The hook will send push notifications when Claude requires attention
-3. Empty matcher means it applies to all situations
+1. Go to [ntfy.sh](https://ntfy.sh) and create a topic to follow. Grab the topic ID.
+2. Set the `NTFY_TOPIC` environment variable to your ntfy.sh topic
+3. The hook will send push notifications when Claude requires attention
+4. Empty matcher means it applies to all situations
 
 ### Allowed Tools
 

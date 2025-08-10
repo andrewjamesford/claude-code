@@ -95,8 +95,10 @@ Code is clean if it can be understood easily – by everyone on the team. Clean 
 
 ## Tools
 
-You have access to multiple CLI tools for example Gemini CLI, Peekaboo and GH CLI that can help you with different tasks, such as subagent requests. Gemini can be invoked using the command line interface (CLI).
+You have access to multiple CLI tools for example Gemini CLI, GH CLI (for GitHub and GitHub Copilot) that can help you with different tasks, such as subagent requests. 
 
-- Gemini CLI - `gemini -a -p "<YOUR PROMPT>"` - with the -a All files, and -p prompt flags
-- GH CLI - `gh <command>` - with the -a All files, and -p prompt flags
-- PEEKABOO CLI - `peekaboo <command>` - take screenshots and analyse [documentation](https://github.com/steipete/Peekaboo/blob/main/README.md)
+- Gemini CLI Prompt example - `gemini -a -p "<YOUR PROMPT>"` - with the -a All files, and -p prompt flags
+- Gemini CLI Help - `gemini -h` - to seel all commands available
+- GH CLI - `gh <command> <subcommand> [flags]` - to see all commands available to use `gh -h`
+- GH CLI Copilot code explanation example - `gh copilot explain "<your command or code here>"` - Use copilot explain from the CLI
+- GH CLI Copilot code suggestions - `gh copilot suggest "<your task here>"` - Use copilot suggest from the CLI

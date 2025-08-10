@@ -41,7 +41,7 @@ Ask the user for the following information if not provided with $ARGUMENTS:
 
 ### Step 2: Test List Creation
 
-Based on the information gathered, create a comprehensive test list covering:
+Based on the information gathered, ultrathink to create a comprehensive test list covering:
 
 **Core Scenarios:**
 

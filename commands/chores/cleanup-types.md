@@ -18,6 +18,7 @@ First, let me analyze your project structure:
 ## Type Issues I'll Target
 
 ### Critical Issues (Priority 1)
+
 - `any` types in TypeScript/Flow
 - Implicit `any` parameters in functions
 - Missing return type annotations
@@ -25,6 +26,7 @@ First, let me analyze your project structure:
 - Type assertions without validation (`as` casts, `!` assertions)
 
 ### Common Issues (Priority 2)
+
 - Overly broad types (`object`, `Function`, raw arrays `[]`)
 - Union types that could be narrowed
 - Missing generic constraints
@@ -32,6 +34,7 @@ First, let me analyze your project structure:
 - Props without proper typing (React/Vue/Angular)
 
 ### Enhancement Opportunities (Priority 3)
+
 - String literals that could be literal types or enums
 - Number types that could be more specific
 - Arrays that could use readonly or tuple types
@@ -100,6 +103,7 @@ function processData(data: ProcessDataInput): string[] {
 ## Configuration Options
 
 Would you like me to:
+
 - Focus on specific directories or file patterns?
 - Prioritize certain types of issues?
 - Apply stricter or more lenient type standards?
@@ -110,6 +114,7 @@ Would you like me to:
 ## Safety Guarantees
 
 I will:
+
 - ✅ Preserve all existing functionality
 - ✅ Maintain backward compatibility
 - ✅ Follow your project's style guide
@@ -123,14 +128,18 @@ Ready to begin? I'll start by scanning your codebase to identify type improvemen
 ## Additional Features
 
 ### Type Coverage Report
+
 I can generate a report showing:
+
 - Current type coverage percentage
 - Files with the most type issues
 - Estimated effort for full type safety
 - Risk assessment for each change
 
 ### Migration Strategy
+
 For large codebases, I can create:
+
 - Phased migration plan
 - Type definition files for gradual adoption
 - Automated refactoring scripts

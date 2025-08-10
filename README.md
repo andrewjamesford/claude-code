@@ -1,4 +1,4 @@
-```
+```md
   ██████╗██╗      █████╗ ██╗   ██╗██████╗ ███████╗     ██████╗ ██████╗ ██████╗ ███████╗
  ██╔════╝██║     ██╔══██╗██║   ██║██╔══██╗██╔════╝    ██╔════╝██╔═══██╗██╔══██╗██╔════╝
  ██║     ██║     ███████║██║   ██║██║  ██║█████╗      ██║     ██║   ██║██║  ██║█████╗  
@@ -41,6 +41,7 @@
 This repository contains configuration files and supporting documentation for using Claude (Anthropic's AI assistant) in coding workflows.
 
 ## Table of Contents
+
 - [Overview](#overview)
 - [Features](#features)
 - [Getting Started](#getting-started)
@@ -52,9 +53,8 @@ This repository contains configuration files and supporting documentation for us
 - [Contributing](#contributing)
 - [License](#license)
 - [Credits](#credits)
+
 ***
-
-
 
 ## Overview
 
@@ -62,7 +62,7 @@ This repository contains some examples of claude commands, agents and configurat
 
 ## Project Structure
 
-```
+```md
 claude-code/
 ├── CLAUDE.md                # Project instructions and Clean Code principles
 ├── LICENSE                  # Apache 2.0 license
@@ -200,6 +200,7 @@ Creates comprehensive test scenarios before implementation:
 Guides systematic implementation through Red-Green-Refactor:
 
 #### RED Phase - Write Failing Test
+
 - Select one test from the list
 - Write minimal test code describing expected behavior
 - Use descriptive test names
@@ -207,6 +208,7 @@ Guides systematic implementation through Red-Green-Refactor:
 - Verify failure message is clear and helpful
 
 #### GREEN Phase - Make Test Pass
+
 - Write simplest possible code to pass the test
 - Use hard-coding or obvious implementation as needed
 - Focus only on current test
@@ -214,6 +216,7 @@ Guides systematic implementation through Red-Green-Refactor:
 - Commit working code before proceeding
 
 #### REFACTOR Phase - Improve Design
+
 - Look for code duplication to eliminate
 - Improve variable and method names
 - Extract methods or classes where appropriate
@@ -257,16 +260,19 @@ Guides systematic implementation through Red-Green-Refactor:
 ### Common Pitfalls to Avoid
 
 **RED Phase:**
+
 - Writing tests that always pass
 - Testing multiple behaviors in single test
 - Overly complex test setup
 
 **GREEN Phase:**
+
 - Writing more code than needed
 - Mixing refactoring with implementation
 - Breaking existing tests
 
 **REFACTOR Phase:**
+
 - Adding new functionality
 - Refactoring without test safety net
 - Over-engineering solutions
@@ -280,17 +286,22 @@ The chores folder contains maintenance and code quality commands to keep your co
 ### Available Chores
 
 #### `/cleanup-types` - Type Safety Improvement
+
 Finds and fixes loose type declarations to improve code type safety:
+
 - **Targets**: `any` types, missing return types, untyped functions
 - **Languages**: TypeScript, Flow, and typed JavaScript
-- **Features**: 
+- **Features**:
+
   - Priority-based fixing (critical → enhancement)
   - Usage pattern analysis for better type inference
   - Safety guarantees with no breaking changes
   - Type coverage reporting
 
 #### `/commit` - Intelligent Git Commits
+
 Creates meaningful commit messages following project conventions:
+
 - **Auto-detects**: Conventional commits, bracket format, ticket references
 - **Analyzes**: Change patterns, file types, commit history
 - **Features**:
@@ -300,7 +311,9 @@ Creates meaningful commit messages following project conventions:
   - Large file and sensitive data warnings
 
 #### `/fix-imports` - Import Statement Repair
+
 Fixes broken import statements after file moves/renames:
+
 - **Supports**: JavaScript/TypeScript, Python, Java, Go, Rust
 - **Smart Resolution**: Similarity matching, content analysis, git history
 - **Features**:
@@ -310,7 +323,9 @@ Fixes broken import statements after file moves/renames:
   - Batch operations with confidence scoring
 
 #### `/format` - Code Formatting
+
 Auto-formats code using project's configured formatter:
+
 - **Formatters**: Prettier, Biome, ESLint, Black, gofmt, rustfmt
 - **Features**:
   - Multi-language support in single run
@@ -319,7 +334,9 @@ Auto-formats code using project's configured formatter:
   - Configuration detection and validation
 
 #### `/remove-comments` - Comment Cleanup
+
 Removes redundant comments while preserving valuable documentation:
+
 - **Removes**: Obvious comments that restate code
 - **Preserves**: WHY explanations, warnings, TODOs, business logic
 - **Features**:
@@ -329,7 +346,9 @@ Removes redundant comments while preserving valuable documentation:
   - Quality metrics reporting
 
 #### `/review` - Code Quality Review
+
 Comprehensive code review for security, bugs, and quality issues:
+
 - **Security**: SQL injection, XSS, hardcoded secrets, crypto issues
 - **Bugs**: Null handling, async/promise issues, type coercion
 - **Quality**: Complexity analysis, code smells, error handling
@@ -340,7 +359,9 @@ Comprehensive code review for security, bugs, and quality issues:
   - Trend analysis and continuous monitoring
 
 #### `/test` - Smart Test Runner
+
 Runs tests with intelligent failure analysis and fixing assistance:
+
 - **Frameworks**: Jest, Pytest, Go test, Cargo test, Maven, Gradle
 - **Features**:
   - Auto-discovery of test configuration
@@ -352,7 +373,7 @@ Runs tests with intelligent failure analysis and fixing assistance:
 
 ```bash
 # Clean up codebase before release
-/format                    # Auto-format all code
+/format                   # Auto-format all code
 /fix-imports              # Fix any broken imports
 /cleanup-types            # Improve type safety
 /remove-comments          # Clean up redundant comments
@@ -364,16 +385,19 @@ Runs tests with intelligent failure analysis and fixing assistance:
 ### Common Use Cases
 
 **Pre-commit Cleanup:**
+
 ```bash
 /format && /test && /commit
 ```
 
 **Post-refactor Maintenance:**
+
 ```bash
 /fix-imports && /cleanup-types && /review
 ```
 
 **Release Preparation:**
+
 ```bash
 /remove-comments && /format && /test && /review
 ```
@@ -411,6 +435,7 @@ This configuration includes a notification hook that sends alerts via [ntfy.sh](
 ```
 
 **Setup:**
+
 1. Go to [ntfy.sh](https://ntfy.sh) and create a topic to follow. Grab the topic ID.
 2. Set the `NTFY_TOPIC` environment variable to your ntfy.sh topic
 3. The hook will send push notifications when Claude requires attention
@@ -439,11 +464,11 @@ The `Bash` tool is marked as dangerous because it allows execution of arbitrary 
 ### Customization
 
 You can modify `settings.json` to:
+
 - Add custom notification hooks
 - Restrict or expand tool permissions
 - Configure different hook matchers for specific scenarios
 - Set up additional notification channels
-
 
 ## Contributing
 
@@ -461,9 +486,9 @@ Apache 2.0
 
 ## Credits
 
-A **lot** of inspiration was taken from: 
+A **lot** of inspiration was taken from:
 
-- The PRD fodler was modified from Ryan Carsons [ai-dev-tasks](https://github.com/snarktank/ai-dev-tasks/) 
-- The chores folder was modified from Brenner Cruvinel's [CCPlugins](https://github.com/brennercruvinel/CCPlugins)
+- The PRD folder was modified from Ryan Carsons [ai-dev-tasks](https://github.com/snarktank/ai-dev-tasks/) 
+- The chores folder was modified from Brenner Cruvinels [CCPlugins](https://github.com/brennercruvinel/CCPlugins)
 - Claude Code Opus 4.1 did most of the heavy lifting
-- [ClaudeLog](https://claudelog.com/) and the [Anthropic documentation](https://docs.anthropic.com/en/docs/claude-code/overview) is essential reading to getting the most 
+- [ClaudeLog](https://claudelog.com/) and the [Anthropic documentation](https://docs.anthropic.com/en/docs/claude-code/overview) is essential reading to getting the most

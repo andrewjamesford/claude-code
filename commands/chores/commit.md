@@ -197,6 +197,7 @@ echo "------------------------"
 ```
 
 I'll now analyze the specific changes to create a descriptive commit message that:
+
 - Summarizes what changed (not how)
 - Uses present tense ("add" not "added")
 - Stays under 50 characters for the subject
@@ -276,6 +277,7 @@ echo "  • Continue with next task"
 ## Important Notes
 
 **I will NEVER:**
+
 - Add "(Co-)authored-by" or any Claude signatures
 - Modify your git configuration
 - Include AI/assistant attribution
@@ -283,6 +285,7 @@ echo "  • Continue with next task"
 - Commit without showing you the message first
 
 **I will ALWAYS:**
+
 - Use your existing git user configuration
 - Follow detected project conventions
 - Validate changes before committing

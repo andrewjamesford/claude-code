@@ -36,9 +36,10 @@ echo ""
 
 ## 🛡️ Security Analysis
 
-### Critical Security Checks:
+### Critical Security Checks
 
 #### 1. **Credential & Secret Detection**
+
 ```javascript
 // Scanning for:
 - API keys: /api[_-]?key/i
@@ -55,6 +56,7 @@ const dbUrl = "postgres://user:pass@localhost/db"; // ❌ Credentials in URL
 ```
 
 #### 2. **Injection Vulnerabilities**
+
 ```javascript
 // SQL Injection risks:
 db.query(`SELECT * FROM users WHERE id = ${userId}`); // ❌ Unsafe
@@ -74,6 +76,7 @@ textContent = userContent; // ✅ Safe
 ```
 
 #### 3. **Authentication & Authorization**
+
 ```javascript
 // Missing auth checks:
 router.get('/admin', (req, res) => { // ❌ No auth middleware
@@ -90,6 +93,7 @@ session.cookie.httpOnly = false; // ❌ Accessible via JS
 ```
 
 #### 4. **Cryptography Issues**
+
 ```javascript
 // Weak algorithms:
 crypto.createHash('md5'); // ❌ MD5 is broken
@@ -106,9 +110,10 @@ generateKeyPair('rsa', { modulusLength: 2048 }); // ✅ Minimum recommended
 
 ## 🐛 Bug Detection
 
-### Common Bug Patterns:
+### Common Bug Patterns
 
 #### 1. **Null/Undefined Handling**
+
 ```javascript
 // Potential crashes:
 user.name.toLowerCase(); // ❌ Can crash if user or name is null
@@ -126,6 +131,7 @@ function process(options) {
 ```
 
 #### 2. **Async/Promise Issues**
+
 ```javascript
 // Unhandled rejections:
 async function fetchData() {
@@ -145,6 +151,7 @@ await Promise.allSettled(promises); // ✅ Handles individual failures
 ```
 
 #### 3. **Type Coercion Bugs**
+
 ```javascript
 // Dangerous comparisons:
 if (value == false) // ❌ Matches 0, "", [], etc.
@@ -160,6 +167,7 @@ if (Array.isArray(data) && data.length) // ✅ Type-safe
 ```
 
 #### 4. **Resource Management**
+
 ```javascript
 // Memory leaks:
 element.addEventListener('click', handler); // ❌ Never removed
@@ -176,9 +184,10 @@ const conn = await db.connect(); // ❌ Connection leak
 
 ## ⚡ Performance Analysis
 
-### Performance Anti-patterns:
+### Performance Anti-patterns
 
 #### 1. **Algorithm Complexity**
+
 ```javascript
 // O(n²) when O(n) is possible:
 for (let i = 0; i < items.length; i++) {
@@ -197,6 +206,7 @@ for (const item of items) {
 ```
 
 #### 2. **Database Query Issues**
+
 ```javascript
 // N+1 queries:
 const users = await User.findAll();
@@ -209,6 +219,7 @@ const users = await User.findAll({ include: Post }); // ✅ 1 query
 ```
 
 #### 3. **React/Frontend Issues**
+
 ```javascript
 // Missing keys in lists:
 items.map(item => <Item {...item} />); // ❌ No key
@@ -224,10 +235,11 @@ import debounce from 'lodash/debounce'; // ✅ Specific import
 
 ## 🎨 Code Quality Assessment
 
-### Quality Metrics:
+### Quality Metrics
 
 #### 1. **Complexity Analysis**
-```
+
+```md
 Function: processOrder()
 ├── Cyclomatic Complexity: 15 ⚠️ (threshold: 10)
 ├── Cognitive Complexity: 22 ⚠️ (threshold: 15)
@@ -236,6 +248,7 @@ Function: processOrder()
 ```
 
 #### 2. **Code Smells**
+
 ```javascript
 // Long parameter lists:
 function create(name, age, email, address, phone, company) { // ❌
@@ -257,6 +270,7 @@ if (false) { // ❌ Unreachable
 ```
 
 #### 3. **Error Handling**
+
 ```javascript
 // Silent failures:
 try {
@@ -283,7 +297,7 @@ catch (error) {
 
 ## 📊 Review Report Format
 
-### For each issue found:
+### For each issue found
 
 ```markdown
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -302,16 +316,18 @@ db.execute(query);
 ```
 
 Recommended Fix:
+
 ```javascript
 const query = 'SELECT * FROM users WHERE id = ?';
 db.execute(query, [req.params.id]);
 ```
 
 References:
-• OWASP: https://owasp.org/www-community/attacks/SQL_Injection
+• OWASP: <https://owasp.org/www-community/attacks/SQL_Injection>
 • Prevention: Use parameterized queries or prepared statements
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-```
+
+```md
 
 ## 🎯 Severity Classification
 
@@ -357,7 +373,7 @@ echo "  4. Create fix commits individually"
 
 ## 📈 Code Metrics Dashboard
 
-```
+```md
 ═══════════════════════════════════════════════════════════
                     CODE REVIEW SUMMARY
 ═══════════════════════════════════════════════════════════
@@ -391,17 +407,20 @@ Trend (vs. last review):
 
 Based on the review, here's your action plan:
 
-### Immediate (Critical Security):
+### Immediate (Critical Security)
+
 1. Fix SQL injection in users.js:45
 2. Remove hardcoded API key in config.js:12
 3. Add authentication to admin routes
 
-### Short-term (This Sprint):
+### Short-term (This Sprint)
+
 1. Add error handling to async functions
 2. Fix memory leak in EventListener
 3. Refactor complex processOrder() function
 
-### Long-term (Technical Debt):
+### Long-term (Technical Debt)
+
 1. Increase test coverage to 80%
 2. Implement proper logging strategy
 3. Set up security scanning in CI/CD

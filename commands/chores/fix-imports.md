@@ -10,7 +10,8 @@ I'll help fix import statements that broke after moving or renaming files, suppo
 ## Initial Analysis
 
 ### 1. Project Detection
-```
+
+```md
 Scanning project structure...
 ├── Detecting language(s) and frameworks
 ├── Identifying build configuration files
@@ -19,6 +20,7 @@ Scanning project structure...
 ```
 
 I'll detect:
+
 - **Languages**: JavaScript/TypeScript, Python, Java, Go, Rust, C/C++, PHP, Ruby, etc.
 - **Module Systems**: ES6, CommonJS, Python modules, Java packages, etc.
 - **Path Aliases**: tsconfig paths, webpack aliases, module resolution configs
@@ -29,6 +31,7 @@ I'll detect:
 Based on your language, I'll look for:
 
 **JavaScript/TypeScript:**
+
 ```javascript
 import { Component } from './components/Button';     // ES6
 const utils = require('../utils/helpers');           // CommonJS
@@ -38,6 +41,7 @@ import type { Props } from './types';                // Type imports
 ```
 
 **Python:**
+
 ```python
 from app.models import User                          # Absolute
 from ..utils import helper                           # Relative
@@ -46,6 +50,7 @@ from . import module                                 // Package
 ```
 
 **Java/Kotlin:**
+
 ```java
 import com.example.models.User;                      // Package
 import static org.junit.Assert.*;                    // Static
@@ -53,6 +58,7 @@ import com.example.utils.*;                          // Wildcard
 ```
 
 **Go:**
+
 ```go
 import "github.com/user/repo/pkg"                    // External
 import "./internal/utils"                            // Internal
@@ -61,7 +67,7 @@ import _ "database/sql"                              // Side-effect
 
 ## Broken Import Detection
 
-### Scanning Strategy:
+### Scanning Strategy
 
 1. **Parse All Source Files**
    - Extract import statements with their exact syntax
@@ -69,7 +75,8 @@ import _ "database/sql"                              // Side-effect
    - Track import resolution context
 
 2. **Verify Each Import**
-   ```
+
+   ```md
    For each import:
    ├── Resolve the expected path
    ├── Check if target exists
@@ -86,9 +93,9 @@ import _ "database/sql"                              // Side-effect
 
 ## Smart Resolution
 
-### File Discovery Algorithm:
+### File Discovery Algorithm
 
-```
+```md
 1. Exact Name Match
    └── Search for exact filename in new locations
 
@@ -108,7 +115,8 @@ import _ "database/sql"                              // Side-effect
    └── Consider common refactoring patterns
 ```
 
-### Resolution Priority:
+### Resolution Priority
+
 1. **Same Directory** - File renamed in place
 2. **Sibling Directories** - Moved to parallel folder
 3. **Parent/Child** - Moved up or down hierarchy  
@@ -117,7 +125,7 @@ import _ "database/sql"                              // Side-effect
 
 ## Fix Application
 
-### For Each Broken Import:
+### For Each Broken Import
 
 ```typescript
 // 📍 File: src/components/Dashboard.tsx
@@ -138,9 +146,10 @@ import { Button } from './shared/Button';
 // - No circular dependencies ✓
 ```
 
-### Handling Complex Cases:
+### Handling Complex Cases
 
 **Barrel Exports:**
+
 ```typescript
 // If the import was from an index file
 import { Button, Input } from './components';
@@ -152,6 +161,7 @@ import { Input } from './components/Input';
 ```
 
 **Monorepo/Workspace:**
+
 ```typescript
 // Handle cross-package imports
 import { utils } from '@myapp/shared';
@@ -159,6 +169,7 @@ import { utils } from '@myapp/shared';
 ```
 
 **Dynamic Imports:**
+
 ```javascript
 // Handle dynamic and lazy imports
 const Component = lazy(() => import('./Component'));
@@ -169,7 +180,7 @@ const Component = lazy(() => import('./Component'));
 
 When multiple matches exist or confidence is low:
 
-```
+```md
 🤔 Ambiguous import detected:
    File: src/pages/Home.tsx
    Import: import { useAuth } from '../hooks/useAuth';
@@ -194,13 +205,15 @@ When multiple matches exist or confidence is low:
 
 ## Batch Operations
 
-### Intelligent Grouping:
+### Intelligent Grouping
+
 - **Same Fix Pattern**: Apply similar fixes together
 - **Related Files**: Fix imports in feature groups
 - **Dependency Order**: Fix in dependency order to avoid cascading issues
 
-### Preview Mode:
-```
+### Preview Mode
+
+```md
 📊 Import Fix Summary:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Total broken imports found: 23
@@ -222,13 +235,15 @@ Would you like to:
 
 ## Validation & Safety
 
-### Pre-fix Validation:
+### Pre-fix Validation
+
 - **Circular Dependencies**: Detect and prevent
 - **Type Compatibility**: Verify exports match expected types
 - **Side Effects**: Check for module initialization dependencies
 - **Build Impact**: Estimate build/compile impact
 
-### Post-fix Verification:
+### Post-fix Verification
+
 ```bash
 # Run validation appropriate to project:
 - TypeScript: tsc --noEmit
@@ -241,6 +256,7 @@ Would you like to:
 ## Advanced Features
 
 ### 1. Alias Resolution
+
 ```javascript
 // Resolve path aliases from config
 import { Button } from '@components/Button';
@@ -248,6 +264,7 @@ import { Button } from '@components/Button';
 ```
 
 ### 2. Import Optimization
+
 ```javascript
 // While fixing, also optimize:
 // Before: import { default as React, useState, useEffect } from 'react';
@@ -255,12 +272,14 @@ import { Button } from '@components/Button';
 ```
 
 ### 3. Git Integration
+
 ```bash
 # Use git history to track moves
 git log --follow --name-only --format="" -- "**/Button.*"
 ```
 
 ### 4. Update References
+
 - Update corresponding export statements
 - Fix test file imports
 - Update documentation links
@@ -268,7 +287,8 @@ git log --follow --name-only --format="" -- "**/Button.*"
 
 ## Error Recovery
 
-### For Unresolvable Imports:
+### For Unresolvable Imports
+
 ```typescript
 // ⚠️ Could not resolve:
 import { LegacyComponent } from './old/LegacyComponent';
@@ -286,7 +306,7 @@ import { LegacyComponent } from './old/LegacyComponent';
 
 ## Final Report
 
-```
+```md
 ✅ Import Fix Complete!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Fixed: 19/23 broken imports
@@ -316,6 +336,7 @@ Need help with unresolved imports? Run with --verbose flag.
 ## Configuration Support
 
 I'll respect your project's import preferences:
+
 - **Sort Order**: Alphabetical, grouped, or custom
 - **Quote Style**: Single or double quotes
 - **Trailing Commas**: Preserve your style

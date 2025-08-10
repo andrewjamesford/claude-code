@@ -119,9 +119,10 @@ if (x > 0) { // Check if x is greater than 0 ❌
 
 ## Analysis Patterns
 
-### Pattern Detection by Language:
+### Pattern Detection by Language
 
 **JavaScript/TypeScript:**
+
 ```javascript
 // Patterns to remove:
 - // constructor | // Constructor method
@@ -136,6 +137,7 @@ if (x > 0) { // Check if x is greater than 0 ❌
 ```
 
 **Python:**
+
 ```python
 # Patterns to remove:
 - # initialize | x = 0  # initialize x
@@ -149,6 +151,7 @@ if (x > 0) { // Check if x is greater than 0 ❌
 ```
 
 **Go:**
+
 ```go
 // Patterns to remove:
 - // struct | type User struct { // User struct
@@ -209,15 +212,17 @@ echo "Proceeding with option 1 (Interactive)..."
 
 ## Smart Preservation Rules
 
-### Always Preserve:
+### Always Preserve
 
 1. **License Headers & Copyright**
+
    ```javascript
    // Copyright (c) 2024 Company Name
    // Licensed under MIT License
    ```
 
 2. **Disable Directives**
+
    ```javascript
    // eslint-disable-next-line no-console
    /* stylelint-disable property-no-vendor-prefix */
@@ -225,23 +230,27 @@ echo "Proceeding with option 1 (Interactive)..."
    ```
 
 3. **Configuration Comments**
+
    ```javascript
    // webpack-specific comment
    /* webpackChunkName: "vendor" */
    ```
 
 4. **Regular Expression Explanations**
+
    ```javascript
    // Matches email: <username>@<domain>.<tld>
    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
    ```
 
 5. **Magic Numbers/Constants Context**
+
    ```javascript
    const RETRY_DELAY = 1000; // 1 second - matches API rate limit
    ```
 
 6. **Algorithm Complexity**
+
    ```javascript
    // O(n log n) - sorting dominates the complexity
    ```
@@ -272,12 +281,14 @@ echo "  Average comment value: High"
 ## Special Cases Handling
 
 ### Generated Code
+
 ```javascript
 // Files with "generated" or "auto-generated" headers are skipped
 // Example: protobuf, swagger, graphql generated files
 ```
 
 ### Documentation Blocks
+
 ```javascript
 /**
  * Even if this seems obvious, JSDoc/Javadoc blocks are preserved
@@ -288,6 +299,7 @@ echo "  Average comment value: High"
 ```
 
 ### Commented-Out Code
+
 ```javascript
 // Analyze if commented code should be removed:
 // - If it's been there > 6 months (check git history)
@@ -298,6 +310,7 @@ echo "  Average comment value: High"
 ## Language-Specific Rules
 
 ### React/JSX
+
 ```javascript
 // Remove:
 {/* Render the button */}
@@ -309,6 +322,7 @@ echo "  Average comment value: High"
 ```
 
 ### SQL in Code
+
 ```sql
 -- Remove:
 SELECT * FROM users -- Select all from users
@@ -319,6 +333,7 @@ SELECT * FROM users WITH (NOLOCK)
 ```
 
 ### CSS/SCSS
+
 ```css
 /* Remove: */
 .container { /* Container styles */

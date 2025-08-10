@@ -9,7 +9,7 @@ I'll format your code using the project's configured formatter, ensuring consist
 
 ## Formatter Detection
 
-### Scanning for formatters and their configurations:
+### Scanning for formatters and their configurations
 
 ```bash
 echo "🔍 Detecting project formatters..."
@@ -409,16 +409,19 @@ fi
 I'll automatically detect and use the appropriate formatter for your project:
 
 **Primary Formatters** (in order of preference):
+
 1. **Prettier** - If .prettierrc or prettier.config.js exists
 2. **Biome** - If biome.json exists (modern, fast alternative)
 3. **Language-specific** - Black (Python), gofmt (Go), rustfmt (Rust), etc.
 
 **Additional Tools**:
+
 - ESLint with --fix for JavaScript/TypeScript
 - Stylelint for CSS/SCSS
 - PHP CS Fixer for PHP
 
 **Smart Features**:
+
 - Formats only modified files by default (using git)
 - Creates backup before formatting
 - Runs multiple formatters for mixed-language projects

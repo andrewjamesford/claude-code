@@ -240,9 +240,10 @@ fi
 
 Based on the failure patterns, I'll provide specific fixes:
 
-### Common Failure Patterns:
+### Common Failure Patterns
 
 #### 1. **Assertion Failures**
+
 ```javascript
 // ❌ Test failure:
 Expected: "Hello World"
@@ -255,6 +256,7 @@ Received: "Hello world"
 ```
 
 #### 2. **Async/Timing Issues**
+
 ```javascript
 // ❌ Test failure:
 Timeout - Async callback was not invoked within 5000ms
@@ -269,6 +271,7 @@ test('async test', async () => {
 ```
 
 #### 3. **Mock/Stub Issues**
+
 ```javascript
 // ❌ Test failure:
 Cannot read property 'get' of undefined
@@ -281,6 +284,7 @@ jest.mock('./api', () => ({
 ```
 
 #### 4. **Environment Issues**
+
 ```bash
 # ❌ Test failure:
 Cannot find module 'xyz'
@@ -292,6 +296,7 @@ Cannot find module 'xyz'
 ```
 
 #### 5. **Database/External Service Issues**
+
 ```javascript
 // ❌ Test failure:
 Connection refused: localhost:5432
@@ -401,7 +406,7 @@ fi
 
 I'll identify the root cause of failures:
 
-### Categories of Issues:
+### Categories of Issues
 
 1. **Test Code Issues**
    - Incorrect assertions
@@ -431,6 +436,7 @@ I'll identify the root cause of failures:
 For each identified issue, I'll:
 
 1. **Show the exact problem**
+
    ```javascript
    // File: src/utils.test.js:15
    // ❌ Failing assertion:
@@ -439,6 +445,7 @@ For each identified issue, I'll:
    ```
 
 2. **Provide the fix**
+
    ```javascript
    // ✅ Fix option 1: Update test expectation
    expect(formatDate('2024-01-01')).toBe('January 1, 2024')
@@ -448,6 +455,7 @@ For each identified issue, I'll:
    ```
 
 3. **Verify the fix**
+
    ```bash
    # Re-run just this test to verify
    npm test -- utils.test.js
@@ -481,6 +489,7 @@ fi
 ## 🚀 Advanced Features
 
 ### Parallel Test Execution
+
 ```bash
 # Speed up test runs with parallel execution
 if [[ "$TEST_FRAMEWORK" == "jest" ]]; then
@@ -490,6 +499,7 @@ fi
 ```
 
 ### Test Filtering
+
 ```bash
 # Run specific test suites or patterns
 echo "Filter options:"
@@ -499,6 +509,7 @@ echo "  • By suite: npm test -- --selectProjects=unit"
 ```
 
 ### Continuous Testing
+
 ```bash
 # Set up watch mode for development
 echo "Starting test watcher..."

@@ -1,9 +1,9 @@
 ---
-description: Generate a Task List from a PRD
+description: Generate a Task List from a Product Requirements Document
 model: opus
 ---
 
-# Generate a Task List from a PRD
+# Generate a Task List from a Product Requirements Document
 
 ## Goal
 

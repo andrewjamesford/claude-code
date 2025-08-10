@@ -103,7 +103,7 @@ Feel free to submit pull requests, bug reports, or feature requests!
 
 ## License
 
-[Specify your license here, such as MIT or Apache 2.0.]
+Apache 2.0
 
 ## Credits
 

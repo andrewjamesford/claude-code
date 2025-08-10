@@ -12,17 +12,12 @@
       }
     ]
   },
-  "allowedTools": [
-    "Task",
-    "Bash", // ⚠️ Dangerous: allows all system commands at your own risk
-    "Glob",
-    "Grep",
-    "LS",
-    "Read",
-    "Edit",
-    "MultiEdit",
-    "Write",
-    "WebFetch",
-    "WebSearch"
-  ]
+  "permissions": {
+    "allow": [
+      "Bash"
+    ],
+    "deny": [
+      "Bash(rm)"
+    ]
+  }
 }

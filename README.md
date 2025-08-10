@@ -36,8 +36,8 @@
                               Start coding with Claude! 🤖
 ```
 
-# Claude Code Config Files
-å
+# Andrew's Claude Code Config Files
+
 This repository contains configuration files and supporting documentation for using Claude (Anthropic's AI assistant) in coding workflows.
 
 ## Table of Contents

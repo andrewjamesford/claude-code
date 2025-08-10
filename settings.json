@@ -12,12 +12,20 @@
       }
     ]
   },
-  "permissions": {
-    "allow": [
-      "Bash"
-    ],
-    "deny": [
-      "Bash(rm)"
-    ]
-  }
+  "permissions": [
+    "Task",
+    "Bash",
+    "Glob",
+    "Grep",
+    "LS",
+    "Read",
+    "Edit",
+    "MultiEdit",
+    "Write",
+    "WebFetch",
+    "WebSearch"
+  ],
+  "deny": [
+    "Bash(rm)"
+  ]
 }

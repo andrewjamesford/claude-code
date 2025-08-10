@@ -7,27 +7,133 @@ model: sonnet
 
 I'll help improve type safety in your code by finding and fixing loose type declarations.
 
-First, let me analyze your project to understand what needs attention. I'll look for:
+## Initial Analysis
 
-- Loose or generic type declarations
-- Missing type annotations where your language supports them
-- Overly permissive types that could be more specific
-- Type assertions that might hide issues
-- Functions without proper type signatures
+First, let me analyze your project structure:
 
-I'll scan your codebase based on file extensions and patterns I find. For each issue discovered, I'll:
+1. **Language Detection**: I'll identify your primary language(s) and their type system capabilities
+2. **Configuration Check**: Look for TypeScript/Flow configs, linting rules, or type checking settings
+3. **Scope Assessment**: Determine which files to analyze based on your project structure
 
-1. Show you the current code with context
-2. Analyze how the value is actually used
-3. Suggest a more specific type based on usage patterns
-4. Explain why the suggested type is better
-5. Apply the change after your confirmation
+## Type Issues I'll Target
 
-My approach prioritizes:
+### Critical Issues (Priority 1)
+- `any` types in TypeScript/Flow
+- Implicit `any` parameters in functions
+- Missing return type annotations
+- Untyped exported functions/constants
+- Type assertions without validation (`as` casts, `!` assertions)
 
-- **Safety**: Never break existing functionality
-- **Clarity**: Make types self-documenting
-- **Maintainability**: Use types that prevent future bugs
-- **Project conventions**: Follow your existing type patterns
+### Common Issues (Priority 2)
+- Overly broad types (`object`, `Function`, raw arrays `[]`)
+- Union types that could be narrowed
+- Missing generic constraints
+- Untyped event handlers and callbacks
+- Props without proper typing (React/Vue/Angular)
 
-This helps catch bugs at compile-time rather than runtime, making your code more robust and easier to maintain.
+### Enhancement Opportunities (Priority 3)
+- String literals that could be literal types or enums
+- Number types that could be more specific
+- Arrays that could use readonly or tuple types
+- Objects that could use interfaces or type aliases
+- Functions that could benefit from overloads
+
+## Analysis Process
+
+For each file, I'll:
+
+1. **Parse and understand context**
+   - How values are initialized
+   - How they're used throughout the code
+   - What operations are performed on them
+   - What they're passed to or returned from
+
+2. **Infer better types**
+   - Analyze usage patterns
+   - Check for consistent shapes/values
+   - Look for discriminated unions opportunities
+   - Consider nullability and optionality
+
+3. **Validate improvements**
+   - Ensure no breaking changes
+   - Check against existing tests
+   - Verify with language server if possible
+
+## Output Format
+
+For each issue found, I'll provide:
+
+```typescript
+// 📍 Location: path/to/file.ts:line
+// ⚠️  Issue: [Description of the problem]
+// 📊 Usage Analysis: [How the value is used]
+
+// ❌ Current:
+function processData(data: any) {
+  return data.items.map(item => item.value);
+}
+
+// ✅ Suggested:
+interface DataItem {
+  value: string;
+}
+
+interface ProcessDataInput {
+  items: DataItem[];
+}
+
+function processData(data: ProcessDataInput): string[] {
+  return data.items.map(item => item.value);
+}
+
+// 💡 Reasoning: [Why this change improves type safety]
+```
+
+## Interactive Workflow
+
+1. **Discovery Phase**: I'll scan and categorize all type issues
+2. **Priority Review**: Show you a summary grouped by severity
+3. **Batch Processing**: Handle similar issues together for efficiency
+4. **Progressive Enhancement**: Start with safe changes, then tackle complex ones
+5. **Validation**: Run type checking after each batch of changes
+
+## Configuration Options
+
+Would you like me to:
+- Focus on specific directories or file patterns?
+- Prioritize certain types of issues?
+- Apply stricter or more lenient type standards?
+- Generate a type definition file for untyped libraries?
+- Add JSDoc comments for better IDE support?
+- Create a migration plan for gradual type improvement?
+
+## Safety Guarantees
+
+I will:
+- ✅ Preserve all existing functionality
+- ✅ Maintain backward compatibility
+- ✅ Follow your project's style guide
+- ✅ Explain each change clearly
+- ✅ Create atomic commits if requested
+- ❌ Never make changes without explanation
+- ❌ Never introduce breaking changes without warning
+
+Ready to begin? I'll start by scanning your codebase to identify type improvement opportunities.
+
+## Additional Features
+
+### Type Coverage Report
+I can generate a report showing:
+- Current type coverage percentage
+- Files with the most type issues
+- Estimated effort for full type safety
+- Risk assessment for each change
+
+### Migration Strategy
+For large codebases, I can create:
+- Phased migration plan
+- Type definition files for gradual adoption
+- Automated refactoring scripts
+- Documentation for team adoption
+
+Let me know if you'd like me to start with a specific area or perform a full project scan!

@@ -1,6 +1,5 @@
 ---
 description: "Run tests and help analyze and fix any failures"
-model: sonnet
 ---
 
 # Smart Test Runner

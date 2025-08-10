@@ -1,6 +1,5 @@
 ---
 description: "Auto-format code using project's configured formatter (Prettier, Biome, etc.)"
-model: sonnet
 ---
 
 # Auto Format Code

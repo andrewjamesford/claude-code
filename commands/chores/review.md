@@ -1,6 +1,5 @@
 ---
 description: "Review code for potential security issues, bugs, and quality problems"
-model: sonnet
 ---
 
 # Code Review

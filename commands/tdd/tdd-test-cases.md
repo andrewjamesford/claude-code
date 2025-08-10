@@ -1,6 +1,5 @@
 ---
 description: "Generate comprehensive TDD test cases following expert best practices"
-model: opus
 ---
 
 # TDD Test Case Writer

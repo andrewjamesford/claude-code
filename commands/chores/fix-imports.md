@@ -1,6 +1,5 @@
 ---
 description: "Fix import statements that broke after moving or renaming files"
-model: sonnet
 ---
 
 # Fix Broken Imports

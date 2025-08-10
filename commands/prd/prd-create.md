@@ -1,6 +1,5 @@
 ---
 description: Create a Product Requirements Document
-model: opus
 ---
 
 # Create a Product Requirements Document (PRD)

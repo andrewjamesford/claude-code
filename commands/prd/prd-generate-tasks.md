@@ -1,6 +1,5 @@
 ---
 description: Generate a Task List from a Product Requirements Document
-model: opus
 ---
 
 # Generate a Task List from a Product Requirements Document

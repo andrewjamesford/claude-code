@@ -1,6 +1,5 @@
 ---
 description: "This slash command guides you through the systematic execution of Test-Driven Development (TDD)"
-model: sonnet
 ---
 
 # TDD Executor - Claude Code Slash Command

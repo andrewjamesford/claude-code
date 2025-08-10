@@ -1,6 +1,5 @@
 ---
 description: "Clean up redundant comments while preserving valuable documentation"
-model: sonnet
 ---
 
 # Remove Obvious Comments

@@ -1,6 +1,5 @@
 ---
 description: "Find and fix loose type declarations to improve code type safety"
-model: sonnet
 ---
 
 # Cleanup Loose Types

@@ -1,6 +1,5 @@
 ---
 description: Guidelines for managing task lists in markdown files to track progress on completing a PRD
-model: sonnet
 ---
 
 # Task List Management

@@ -82,7 +82,8 @@ claude-code/
     │   ├── format.md
     │   ├── remove-comments.md
     │   ├── review.md
-    │   └── test.md
+    │   ├── test.md
+    │   └── worktree.md
     ├── prd/               # Product requirement document commands
     │   ├── prd-create.md
     │   ├── prd-generate-tasks.md
@@ -369,6 +370,22 @@ Runs tests with intelligent failure analysis and fixing assistance:
   - Root cause identification
   - Coverage reporting and debugging assistance
 
+#### `/worktree` - Git Worktree Management
+
+Creates and manages git worktrees for parallel branch development:
+
+- **Purpose**: Work on multiple branches simultaneously without context switching
+- **Features**:
+  - Auto-creates worktrees in parallel directory structure
+  - Intelligent branch naming suggestions
+  - Automatic dependency installation for Node.js, Python, Ruby, Go
+  - Preserves working state across branches
+- **Benefits**:
+  - No need to stash changes when switching tasks
+  - Separate node_modules/venv per worktree
+  - Easy hotfix creation without disrupting feature work
+  - Side-by-side code comparison across branches
+
 ### Example Chores Workflow
 
 ```bash
@@ -400,6 +417,12 @@ Runs tests with intelligent failure analysis and fixing assistance:
 
 ```bash
 /remove-comments && /format && /test && /review
+```
+
+**Parallel Development Setup:**
+
+```bash
+/worktree  # Create worktree for feature/hotfix work
 ```
 
 These chores help maintain code quality, security, and consistency across your project with minimal manual effort.

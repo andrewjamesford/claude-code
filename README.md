@@ -1,6 +1,44 @@
-# Claude Code Config Files
+```
+  ██████╗██╗      █████╗ ██╗   ██╗██████╗ ███████╗     ██████╗ ██████╗ ██████╗ ███████╗
+ ██╔════╝██║     ██╔══██╗██║   ██║██╔══██╗██╔════╝    ██╔════╝██╔═══██╗██╔══██╗██╔════╝
+ ██║     ██║     ███████║██║   ██║██║  ██║█████╗      ██║     ██║   ██║██║  ██║█████╗  
+ ██║     ██║     ██╔══██║██║   ██║██║  ██║██╔══╝      ██║     ██║   ██║██║  ██║██╔══╝  
+ ╚██████╗███████╗██║  ██║╚██████╔╝██████╔╝███████╗    ╚██████╗╚██████╔╝██████╔╝███████╗
+  ╚═════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝     ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝
 
-This repository contains configuration files and supporting documentation for using Claude (Anthropic’s AI assistant) in coding workflows.
+                        ┌─────────────────────────────────────────────┐
+                        │     Andrew's config for Claude Code.        │
+                        └─────────────────────────────────────────────┘
+
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║                              ENHANCED WORKFLOWS                         ║
+    ╠═════════════════════════════════════════════════════════════════════════╣
+    ║                                                                         ║
+    ║     PRD (Product Requirements Document)                                 ║
+    ║     • Structured requirement gathering and analysis                     ║
+    ║     • Feature specification and user story generation                   ║
+    ║     • Technical requirements and acceptance criteria                    ║
+    ║     • Stakeholder alignment and project planning                        ║
+    ║                                                                         ║
+    ║     TDD (Test-Driven Development)                                       ║
+    ║     • Red-Green-Refactor cycle automation                               ║
+    ║     • Test case generation and implementation                           ║
+    ║     • Code quality assurance and regression testing                     ║
+    ║     • Continuous integration and deployment support                     ║
+    ║                                                                         ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    ┌────────────────────────────────────────────────────────────────────────┐
+    │ 🚀 Accelerate Development • 🎨 Clean Code • 🔧 Intelligent Automation   │
+    └────────────────────────────────────────────────────────────────────────┘
+
+                           Ready to transform your workflow?
+                              Start coding with Claude! 🤖
+```
+
+# Claude Code Config Files
+å
+This repository contains configuration files and supporting documentation for using Claude (Anthropic's AI assistant) in coding workflows.
 
 ## Table of Contents
 - [Overview](#overview)
@@ -16,9 +54,11 @@ This repository contains configuration files and supporting documentation for us
 - [Credits](#credits)
 ***
 
+
+
 ## Overview
 
-This repository are some examples of claude commands, agents and configuration. Take the pieces you want to use and place in your .claude folder either in your home directory or in the home of your project.
+This repository contains some examples of claude commands, agents and configuration that I use. Take the pieces you want to use and place in your .claude folder either in your home directory or in the home of your project.
 
 ## Project Structure
 

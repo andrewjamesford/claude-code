@@ -12,24 +12,11 @@
       }
     ]
   },
-  "permissions": [
-    "Task",
-    "Bash",
-    "Glob",
-    "Grep",
-    "LS",
-    "Read",
-    "Edit",
-    "MultiEdit",
-    "Write",
-    "WebFetch",
-    "WebSearch"
-  ],
   "deny": [
     "Bash(rm)"
   ],
   "statusLine": {
     "type": "command",
-    "command": "printf '\\033[44m\\033[30m %s \\033[0m' \"$(basename \"$(pwd)\")\""
+    "command": "input=$(cat); current_dir=\"$(echo \"$input\" | jq -r '.workspace.current_dir')\"; model_name=\"$(echo \"$input\" | jq -r '.model.display_name')\"; git_status=\"$(cd \"$current_dir\" 2>/dev/null && git branch --show-current 2>/dev/null)\"; if [ -n \"$git_status\" ]; then git_info=\" ⎇ $git_status\"; else git_info=\"\"; fi; printf '\\033[44m\\033[30m %s \\033[0m\\033[32m%s\\033[0m \\033[90m%s\\033[0m' \"$(basename \"$current_dir\")\" \"$git_info\" \"$model_name\""
   }
 }

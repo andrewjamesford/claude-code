@@ -1,5 +1,6 @@
 ---
 description: "Clean up redundant comments while preserving valuable documentation"
+allowed-tools: Bash(git:*), Bash(echo:*)
 ---
 
 # Remove Obvious Comments

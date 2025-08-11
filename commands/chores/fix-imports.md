@@ -1,5 +1,6 @@
 ---
 description: "Fix import statements that broke after moving or renaming files"
+allowed-tools: Bash(git:*), Bash(echo:*), Bash(tsc:*), Bash(eslint:*), Bash(pylint:*), Bash(mypy:*), Bash(javac:*), Bash(go:*)
 ---
 
 # Fix Broken Imports

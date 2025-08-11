@@ -1,5 +1,7 @@
 ---
 description: "Run tests and help analyze and fix any failures"
+allowed-tools: Bash(npm:*), Bash(yarn:*), Bash(pnpm:*), 
+  Bash(pytest:*), Bash(go:*), Bash(cargo:*), Bash(mvn:*), Bash(gradle:*), Bash(dotnet:*)
 ---
 
 # Smart Test Runner

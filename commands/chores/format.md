@@ -1,5 +1,6 @@
 ---
 description: "Auto-format code using project's configured formatter (Prettier, Biome, etc.)"
+allowed-tools: Bash(git:*), Bash(npx prettier:*), Bash(npx eslint:*), Bash(npx biome:*), Bash(echo:*), Bash(npm:*), Bash(yarn:*), Bash(pnpm:*), Bash(prettier:*), Bash(biome:*), Bash(eslint:*), Bash(black:*), Bash(gofmt:*), Bash(rustfmt:*)
 ---
 
 # Auto Format Code

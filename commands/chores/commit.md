@@ -1,6 +1,6 @@
 ---
 description: "Follow project conventions to git commit"
-allowed-tools: Bash(git)
+allowed-tools: Bash(git:*), Bash(echo:*)
 ---
 
 # Git Commit

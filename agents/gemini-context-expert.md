@@ -1,7 +1,6 @@
 ---
 name: gemini-context-expert
 description: "Expert sub-agent that maximizes Gemini's 1-million token context window and unique Google Web Search capability to perform comprehensive codebase analysis, process extensive documentation with real-time updates, and prepare optimized context packages for other agents. Combines massive context processing with live web search for up-to-date API references, dependency information, and best practices directly through Gemini CLI."
-model: opus
 color: cyan
 ---
 

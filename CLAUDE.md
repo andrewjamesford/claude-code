@@ -104,7 +104,7 @@ Code is clean if it can be understood easily – by everyone on the team. Clean 
 
 ## Tools
 
-You have access to multiple CLI tools for example Chrome CLI to control chromium browsers, Gemini CLI, Qwen CLI, GH CLI (for GitHub and GitHub Copilot), pgcli & psql for Postresql Server that can help you with different tasks, such as subagent requests.
+You have access to multiple CLI tools for example Chrome CLI to control chromium browsers, Playwright Test CLI for browser automation and end-to-end tests, Gemini CLI, Qwen CLI, GH CLI (for GitHub and GitHub Copilot), pgcli: Enhanced PostgreSQL CLI; psql: Standard PostgreSQL command-line clients for Postresql Server that can help you with different tasks, such as subagent requests.
 
 - Gemini CLI Prompt example - `gemini -a -p "<YOUR PROMPT>"` - with the -a All files, and -p prompt flags
 - Gemini CLI Help - `gemini -h` - to see all commands available
@@ -113,6 +113,7 @@ You have access to multiple CLI tools for example Chrome CLI to control chromium
 - GH CLI Copilot code suggestions - `gh copilot suggest "<your task here>"` - Use copilot suggest from the CLI
 - Qwen CLI Prompt example - `qwen -p "<YOUR PROMPT>"` - and -p prompt flag
 - Qwen CLI Help - `qwen -h` - to see all commands available
-- Psql CLI Help - `psql --help` - to see all commands available
-- PGCLI Help - `pgcli --help` - to see all commands available
+- PostgreSQL CLI Help - `psql --help` - to see all commands available
+- pgcli Enhanced PostgreSQL CLI Help - `pgcli --help` - to see all commands available
 - Chrome CLI Help - `chrome-cli --help` - to see all commands available
+- Playwright CLI - `npx playwright test --help` - to see all commands available

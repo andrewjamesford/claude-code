@@ -4,6 +4,8 @@ description: Generate a Task List from a Product Requirements Document
 
 # Generate a Task List from a Product Requirements Document
 
+Use Plan mode and ultra think when using this command
+
 ## Goal
 
 To guide an AI assistant in creating a detailed, step-by-step task list in Markdown format based on an existing Product Requirements Document (PRD). The task list should guide a developer through implementation.

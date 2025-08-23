@@ -4,6 +4,8 @@ description: Create a Product Requirements Document
 
 # Create a Product Requirements Document (PRD)
 
+Use Plan mode and ultra think when using this command
+
 ## Goal
 
 To guide an AI assistant in creating a detailed Product Requirements Document (PRD) in Markdown format, based on an initial user prompt. The PRD should be clear, actionable, and suitable for a junior developer to understand and implement the feature.

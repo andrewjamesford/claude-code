@@ -21,6 +21,7 @@ Code is clean if it can be understood easily – by everyone on the team. Clean 
 4. Prevent over-configurability.
 5. Use dependency injection.
 6. Follow Law of Demeter. A class should know only its direct dependencies.
+7. Use the rule of three to determine when to implement DRY (Don't Repeat Yourself)
 
 ### Understandability tips
 
@@ -117,3 +118,16 @@ You have access to multiple CLI tools for example Chrome CLI to control chromium
 - pgcli Enhanced PostgreSQL CLI Help - `pgcli --help` - to see all commands available
 - Chrome CLI Help - `chrome-cli --help` - to see all commands available
 - Playwright CLI - `npx playwright test --help` - to see all commands available
+
+## Specialized Agents
+
+You also have access to specialized sub-agents for complex tasks:
+
+- **playwright-test-expert**: Expert in writing, debugging, and maintaining Playwright end-to-end tests
+- **tdd-testing-advocate**: Implements Test-Driven Development methodology and comprehensive test suites  
+- **qa-test-engineer**: Runs tests, performs linting, and ensures code quality standards
+- **code-review-specialist**: Provides expert code reviews for quality, security, and maintainability
+- **software-architect**: Designs features, establishes architecture patterns, and makes technology decisions
+- **tech-pm-prd-expert**: Creates Product Requirement Documents and breaks down complex features
+- **gemini-context-expert**: Leverages Gemini's capabilities for comprehensive codebase analysis
+- **qwen-context-expert**: Uses Qwen's advanced language capabilities for code understanding

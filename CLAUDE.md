@@ -118,6 +118,9 @@ You have access to multiple CLI tools for example Chrome CLI to control chromium
 - pgcli Enhanced PostgreSQL CLI Help - `pgcli --help` - to see all commands available
 - Chrome CLI Help - `chrome-cli --help` - to see all commands available
 - Playwright CLI - `npx playwright test --help` - to see all commands available
+- Docker CLI - `docker --help` - to see all commands available
+- Docker CLI container logs example - `docker logs -f <container_name_or_id>` - View and follow container logs in real-time
+- Docker CLI list containers - `docker ps -a` - List all containers (running and stopped)
 
 ## Specialized Agents
 
@@ -131,3 +134,4 @@ You also have access to specialized sub-agents for complex tasks:
 - **tech-pm-prd-expert**: Creates Product Requirement Documents and breaks down complex features
 - **gemini-context-expert**: Leverages Gemini's capabilities for comprehensive codebase analysis
 - **qwen-context-expert**: Uses Qwen's advanced language capabilities for code understanding
+- **docker-expert**: Expert in Docker containerization, debugging container issues, and analyzing container logs

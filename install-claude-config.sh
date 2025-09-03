@@ -16,6 +16,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Target directory
 CLAUDE_DIR="$HOME/.claude"
+BACKUPS_DIR="$CLAUDE_DIR/backups"
 
 echo -e "${BLUE}Claude Code Configuration Installer${NC}"
 echo "======================================"
@@ -36,15 +37,18 @@ if [[ ! -d "$SCRIPT_DIR/commands" ]]; then
     exit 1
 fi
 
-# Create .claude directory if it doesn't exist
+# Create .claude and backups directories if they don't exist
 echo -e "${BLUE}Creating .claude directory...${NC}"
 mkdir -p "$CLAUDE_DIR"
+mkdir -p "$BACKUPS_DIR"
 
 # Function to backup existing files
 backup_if_exists() {
     local target="$1"
+    local name="$2"
     if [[ -e "$target" ]]; then
-        local backup="${target}.backup.$(date +%Y%m%d_%H%M%S)"
+        local timestamp="$(date +%Y%m%d_%H%M%S)"
+        local backup="$BACKUPS_DIR/${name}.backup.$timestamp"
         echo -e "${YELLOW}Backing up existing $target to $backup${NC}"
         mv "$target" "$backup"
     fi
@@ -52,17 +56,17 @@ backup_if_exists() {
 
 # Copy CLAUDE.md
 echo -e "${BLUE}Installing CLAUDE.md...${NC}"
-backup_if_exists "$CLAUDE_DIR/CLAUDE.md"
+backup_if_exists "$CLAUDE_DIR/CLAUDE.md" "CLAUDE.md"
 cp "$SCRIPT_DIR/CLAUDE.md" "$CLAUDE_DIR/"
 
 # Copy agents directory
 echo -e "${BLUE}Installing agents directory...${NC}"
-backup_if_exists "$CLAUDE_DIR/agents"
+backup_if_exists "$CLAUDE_DIR/agents" "agents"
 cp -r "$SCRIPT_DIR/agents" "$CLAUDE_DIR/"
 
 # Copy commands directory
 echo -e "${BLUE}Installing commands directory...${NC}"
-backup_if_exists "$CLAUDE_DIR/commands"
+backup_if_exists "$CLAUDE_DIR/commands" "commands"
 cp -r "$SCRIPT_DIR/commands" "$CLAUDE_DIR/"
 
 # Set appropriate permissions
@@ -80,5 +84,5 @@ echo "└── commands/"
 find "$CLAUDE_DIR/commands" -name "*.md" | sed 's|.*/|    ├── |' | head -10
 
 echo
-echo -e "${BLUE}Note:${NC} Any existing files were backed up with timestamp suffix"
+echo -e "${BLUE}Note:${NC} Any existing files were backed up to: $BACKUPS_DIR"
 echo -e "${BLUE}Usage:${NC} These configurations will now be available to Claude Code globally"

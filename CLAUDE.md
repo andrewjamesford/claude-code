@@ -136,3 +136,4 @@ You also have access to specialized sub-agents for complex tasks:
 - **gemini-context-expert**: Leverages Gemini's capabilities for comprehensive codebase analysis
 - **qwen-context-expert**: Uses Qwen's advanced language capabilities for code understanding
 - **docker-expert**: Expert in Docker containerization, debugging container issues, and analyzing container logs
+- **ast-grep-expert**: Expert in structural code search, AST-based refactoring, and automated code transformations using ast-grep CLI

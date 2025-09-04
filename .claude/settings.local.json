@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(bash:*)"
+      "Bash(bash:*)",
+      "Bash(ast-grep:*)"
     ],
     "deny": [],
     "ask": []

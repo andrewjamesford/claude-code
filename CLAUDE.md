@@ -121,6 +121,7 @@ You have access to multiple CLI tools for example Chrome CLI to control chromium
 - Docker CLI - `docker --help` - to see all commands available
 - Docker CLI container logs example - `docker logs -f <container_name_or_id>` - View and follow container logs in real-time
 - Docker CLI list containers - `docker ps -a` - List all containers (running and stopped)
+- ast-grep cli find and replace code by syntax - `ast-grep --help` - to see all commands
 
 ## Specialized Agents
 
